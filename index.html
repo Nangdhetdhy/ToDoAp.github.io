@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <div class="header">
+                <h1>📝 My To-Do List</h1>
+                <p class="subtitle">Kelola tugasmu dengan mudah dan efisien</p>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Tambahkan tugas baru..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn">
+                        <i class="fas fa-plus"></i> Tambah
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> Semua
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    <i class="fas fa-circle-notch"></i> Aktif
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check-circle"></i> Selesai
+                </button>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Total Tugas:</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Tugas Aktif:</span>
+                    <span class="stat-value active" id="activeTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Selesai:</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+            </div>
+
+            <ul id="todoList" class="todo-list">
+                <li class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>Belum ada tugas. Mulai tambahkan tugas baru!</p>
+                </li>
+            </ul>
+
+            <div class="action-section">
+                <button id="clearBtn" class="clear-btn">
+                    <i class="fas fa-trash"></i> Hapus Semua Selesai
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
